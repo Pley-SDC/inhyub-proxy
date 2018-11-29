@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 180
+      arrivalRate: 1000
+scenarios:
+  - flow:
+      - get:
+          url: "/{{ $randomNumber(1, 10000000) }}"
+      - post:
+          url: "/api/{{ $randomNumber(1, 10000000) }}/reservation"
+          json:
+            reservee: "hyub"
+            time: "2020"
