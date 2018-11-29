@@ -15,14 +15,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/:id/reservation', 
   proxy({
-    target: 'http://localhost:3002',
+    target: 'http://3.16.181.60:3002',
     changeOrigin: true
   })
 );
 
 app.use('/api/:id/hour',
   proxy({
-    target: 'http://localhost:3002',
+    target: 'http://3.16.181.60:3002',
     changeOrigin: true
   })
 );
